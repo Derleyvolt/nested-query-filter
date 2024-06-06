@@ -184,18 +184,11 @@ class NestedQueryFilter(IQueryFilter):
         'date', 
     ]
 
-    def __init__(self, filter_dict, table):
-        self._query = filter_dict
+    def __init__(self, query, table):
+        self._query = query
         self._table = table
 
-        # self._normalize_data_method = {
-        #     "payment_date": self.normalize_date,
-        #     "date":   self.normalize_date,
-        #     "debit":  self.normalize_decimal,
-        #     "credit": self.normalize_decimal,
-        #     "number": self.normalize_integer,
-        # }
-
+        # list of fields that need to be normalized
         self._normalize_data_method = {
             "date": self.normalize_date,
             "age":  self.normalize_integer,
