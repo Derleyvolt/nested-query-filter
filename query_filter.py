@@ -4,7 +4,7 @@ TABLE_LENGTH = 10000
 
 class IQueryFilter:
     _operators = {
-        # arity is usefull to check if the number of values in query is the same as expected
+        # arity is useful to check if the number of values in query is the same as expected
         # for example, the operator "btw" expects 2 values in query
         # it avoids IndexError when trying to access query values
         "gt": {
