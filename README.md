@@ -4,6 +4,7 @@ A nested query filter that filters data from a specific format table based on an
 - Every field are expected be string
 - integer, float, and date fields are normalized to compare properly
 
+- It uses Cerberus for data validation and query format validation  [Cerberus](https://docs.python-cerberus.org/)
 
 
 ### Example of a valid Query:
