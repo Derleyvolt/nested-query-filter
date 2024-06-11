@@ -2,6 +2,7 @@ from cerberus import *
 import datetime
 
 class IQueryFilter:
+    # can be overrided by subclasses
     _relational_operators = {
         # arity is usefull to check if the number of values in query is the same as expected
         # for example, the operator "btw" expects 2 values in query
@@ -52,6 +53,7 @@ class IQueryFilter:
         },
     }
 
+    # should be overrided by subclasses
     _table_column_types = {
         'number':       {'type': 'integer',  'native_type': int,           'nullable': False}, 
         'account':      {'type': 'string',   'native_type': str,           'nullable': False}, 
@@ -177,7 +179,7 @@ class IQueryFilter:
                 # check if value types are valid
                 self._relational_layer_query_validation(query, type_validation=False)
 
-                # this point is reached when we have a operation
+                # this point is reached when we have a relational operation
                 type   = self._get_type_from_table_column(query["field"])
                 values = query["value"]
                 for index, value in enumerate(values):
