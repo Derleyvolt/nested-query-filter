@@ -192,7 +192,7 @@ class IQueryFilter:
                         raise ValueError("Value '{0}' is not in valid format to be normalized to '{1}'".format(value, type))
                 
                 # garantee that relational layer query is a valid 
-                # in terms of keys and values types
+                # in terms of fields and values types
                 self._relational_layer_query_validation(query)
             
         _normalize_recursive(query)
