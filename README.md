@@ -2,7 +2,7 @@
 A nested query filter that filters data from a specific format table based on an unlimited depth query in Json format.
 
 - Every field are expected be string
-- integer, float, and date fields are normalized to compare properly
+- Integer, float, and date fields are normalized to compare properly
 
 - It uses Cerberus for data validation and query format validation  [Cerberus](https://docs.python-cerberus.org/)
 
