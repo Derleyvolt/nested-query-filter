@@ -1,5 +1,8 @@
 # nested-query-filter
-A nested query filter that filters data from a specific format table based on an unlimited depth query in Json format.
+A nested query filter that filters data from a specific format table based on an unlimited depth query in JSON format.
+
+Below is a component that generates this query based on the UI hierarchy
+![image](https://github.com/Derleyvolt/nested-query-filter/assets/35679266/0fdaa935-734d-4c92-a842-46eec3d268a3)
 
 - Every field are expected be string
 - Integer, float, and date fields are normalized to compare properly
@@ -13,70 +16,37 @@ A nested query filter that filters data from a specific format table based on an
 {
     "AND": [
         {
-            "field": "age",
             "operator": "btw",
-            "value": ['10', '60']
-        }, 
+            "field": "payment_date",
+            "value": [
+                "2024-06-02",
+                "2024-07-15"
+            ]
+        },
         {
-            "field": "date",
-            "operator": "btw",
-            "value": ["01/01/2024", "01/01/2025"]
+            "operator": "eq",
+            "field": "posted",
+            "value": [
+                "1"
+            ]
         },
         {
             "OR": [
                 {
-                    "field": "name",
-                    "operator": "in",
-                    "value": ["joao"]
+                    "operator": "lt",
+                    "field": "number",
+                    "value": [
+                        "200"
+                    ]
                 },
                 {
-                    "field": "name",
-                    "operator": "eq",
-                    "value": ["maria"]
-                },
-                {
-                    "OR": [
-                        {
-                            "field": "name",
-                            "operator": "nin",
-                            "value": ["costa"]
-                        },
-                        {
-                            "field": "date",
-                            "operator": "lte",
-                            "value": ["06/06/2025"]
-                        }
+                    "operator": "sw",
+                    "field": "accounts",
+                    "value": [
+                        "0011"
                     ]
                 }
             ]
-        }
-    ],
-    "OR": [
-        {
-            "AND": [
-                {
-                    "field": "age",
-                    "operator": "lte",
-                    "value": ['71']
-                },
-                {
-                    "field": "name",
-                    "operator": "sw",
-                    "value": ["ma"]
-                },
-                {
-                    "field": "name",
-                    "operator": "ew",
-                    "value": ["silva"]
-                }
-            ]
-        },
-        {
-            {
-                "field": "height",
-                "operator": "lte",
-                "value": ['1.78']
-            }
         }
     ]
 }
