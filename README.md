@@ -1,7 +1,7 @@
 # nested-query-filter
 A nested query filter that filters data from a specific format table based on an unlimited depth query in JSON format.
 
-Below is a component that generates this query based on the UI hierarchy
+Below is a component that generates a query based on the UI hierarchy
 ![image](https://github.com/Derleyvolt/nested-query-filter/assets/35679266/0fdaa935-734d-4c92-a842-46eec3d268a3)
 
 - Every field are expected be string
